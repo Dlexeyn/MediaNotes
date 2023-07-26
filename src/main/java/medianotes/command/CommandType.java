@@ -1,4 +1,4 @@
-package src.command;
+package medianotes.command;
 
 public enum CommandType {
     CREATE_NOTE,

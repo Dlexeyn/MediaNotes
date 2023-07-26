@@ -1,6 +1,6 @@
-package src.repository;
+package medianotes.repository;
 
-import src.model.Note;
+import medianotes.model.Note;
 import java.util.Set;
 
 public interface NoteRepository {

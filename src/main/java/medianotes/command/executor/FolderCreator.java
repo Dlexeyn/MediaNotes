@@ -1,8 +1,8 @@
-package src.command.executor;
+package medianotes.command.executor;
 
-import src.command.CommandType;
-import src.model.Folder;
-import src.model.Note;
+import medianotes.command.CommandType;
+import medianotes.model.Folder;
+import medianotes.model.Note;
 
 public class FolderCreator extends AbstractCommandExecutor{
     @Override

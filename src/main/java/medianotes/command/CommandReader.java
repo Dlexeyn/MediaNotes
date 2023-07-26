@@ -1,6 +1,6 @@
-package src.command;
+package medianotes.command;
 
-import src.command.executor.*;
+import medianotes.command.executor.*;
 
 import java.util.Map;
 import java.util.Scanner;

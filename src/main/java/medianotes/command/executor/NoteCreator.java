@@ -1,7 +1,7 @@
-package src.command.executor;
+package medianotes.command.executor;
 
-import src.model.Note;
-import src.command.CommandType;
+import medianotes.model.Note;
+import medianotes.command.CommandType;
 
 public class NoteCreator extends AbstractCommandExecutor {
 

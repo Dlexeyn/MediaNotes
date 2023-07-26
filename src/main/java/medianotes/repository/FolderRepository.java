@@ -1,7 +1,7 @@
 
-package src.repository;
+package medianotes.repository;
 
-import src.model.Folder;
+import medianotes.model.Folder;
 
 import java.util.Set;
 

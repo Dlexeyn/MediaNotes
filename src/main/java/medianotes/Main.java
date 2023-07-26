@@ -1,6 +1,6 @@
-package src;
+package medianotes;
 
-import src.command.CommandReader;
+import medianotes.command.CommandReader;
 
 public class Main {
     public static void main(String[] args) {

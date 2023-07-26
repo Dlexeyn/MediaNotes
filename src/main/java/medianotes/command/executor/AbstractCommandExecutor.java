@@ -1,11 +1,11 @@
-package src.command.executor;
+package medianotes.command.executor;
 
-import src.model.Note;
-import src.model.Folder;
-import src.repository.FolderRepository;
-import src.repository.NoteRepository;
-import src.repository.impl.FolderRepositoryImpl;
-import src.repository.impl.NoteRepositoryImpl;
+import medianotes.model.Note;
+import medianotes.model.Folder;
+import medianotes.repository.FolderRepository;
+import medianotes.repository.NoteRepository;
+import medianotes.repository.impl.FolderRepositoryImpl;
+import medianotes.repository.impl.NoteRepositoryImpl;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -27,7 +27,7 @@ public abstract class AbstractCommandExecutor implements CommandExecutor {
 
     protected Optional<Folder> findFolder(String folderName){
         for(Folder folder : FOLDER_REPOSITORY.findAll()){
-            if(folder.getName().equals(folderName)){
+            if(folder.name().equals(folderName)){
                 return Optional.of(folder);
             }
         }
@@ -51,10 +51,10 @@ public abstract class AbstractCommandExecutor implements CommandExecutor {
     }
 
     protected void findFolderPath(Folder folder, List<String> path){
-        path.add(folder.getName());
+        path.add(folder.name());
 
-        if (folder.getParentFolder() != null)
-            findFolderPath(folder.getParentFolder(), path);
+        if (folder.parentFolder() != null)
+            findFolderPath(folder.parentFolder(), path);
 
     }
 }

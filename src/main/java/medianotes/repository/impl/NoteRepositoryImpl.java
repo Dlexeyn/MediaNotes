@@ -1,7 +1,7 @@
-package src.repository.impl;
+package medianotes.repository.impl;
 
-import src.repository.NoteRepository;
-import src.model.Note;
+import medianotes.repository.NoteRepository;
+import medianotes.model.Note;
 
 import java.util.HashSet;
 import java.util.Set;

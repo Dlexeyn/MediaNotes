@@ -1,4 +1,4 @@
-package src;
+package medianotes;
 
 import java.util.Scanner;
 

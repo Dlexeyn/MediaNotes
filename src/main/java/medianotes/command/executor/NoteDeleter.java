@@ -1,6 +1,6 @@
-package src.command.executor;
+package medianotes.command.executor;
 
-import src.command.CommandType;
+import medianotes.command.CommandType;
 
 public class NoteDeleter extends AbstractCommandExecutor {
     @Override

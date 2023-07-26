@@ -1,7 +1,7 @@
-package src.repository.impl;
+package medianotes.repository.impl;
 
-import src.model.Folder;
-import src.repository.FolderRepository;
+import medianotes.model.Folder;
+import medianotes.repository.FolderRepository;
 
 import java.util.HashSet;
 import java.util.List;
