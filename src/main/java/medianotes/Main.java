@@ -1,5 +1,6 @@
 package medianotes;
 
+import medianotes.authentication.Authentication;
 import medianotes.command.CommandReader;
 
 public class Main {
@@ -15,7 +16,7 @@ public class Main {
         try {
             authentication.authenticate();
         } catch (Exception ex) {
-
+            System.out.println(ex.getMessage());
         }
     }
 }

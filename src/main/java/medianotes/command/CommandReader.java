@@ -15,13 +15,7 @@ public class CommandReader {
                     CommandType.WRITE_ALL_NOTES, new NoteWriter(),
                     CommandType.CREATE_FOLDER, new FolderCreator()
             );
-    /*1
-     * create note;
-     * notes;
-     * remove note.
-     *
-     * example: create note noteName noteText noteText
-     */
+
     public static void startReadCommand(){
         System.out.println("Program started! Write your command: ");
 
@@ -33,8 +27,20 @@ public class CommandReader {
         }
 
     }
+
+    /*
+     * create note <name> <folder> <text>
+     * notes;
+     * remove note <name>
+     *
+     * example: create note someName someFolder someText
+     */
     public static int readCommand(Scanner s) {
 
+//        System.out.print("\033[H\033[2J");
+//        System.out.flush();
+
+        System.out.print("> ");
         String command = s.nextLine();
         if(command.contains("create note"))
             return COMMAND_EXECUTORS_GROUPED_BY_COMMAND.get(CommandType.CREATE_NOTE).execute(command);
@@ -50,7 +56,4 @@ public class CommandReader {
         return -1;
     }
 
-/*    private CommandType getCommandType(String command){
-
-    }*/
 }

@@ -1,4 +1,6 @@
-package medianotes;
+package medianotes.authentication;
+
+import medianotes.context.UserContext;
 
 import java.util.Scanner;
 
@@ -18,13 +20,18 @@ public class Authentication {
             System.out.print("Password: ");
             var pass = scanner.next();
 
-            if(login.equals(LOGIN) && pass.equals(PASSWORD)){
+            if(validate(login, pass)){
                 isLoginSuccess = true;
+                UserContext.setUserLogin(login);
             }
         }
 
         if(!isLoginSuccess){
             throw new RuntimeException("Login failed!");
         }
+    }
+
+    private boolean validate(String login, String pass){
+        return login.equals(LOGIN) && pass.equals(PASSWORD);
     }
 }

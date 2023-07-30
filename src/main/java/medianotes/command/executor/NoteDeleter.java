@@ -18,7 +18,10 @@ public class NoteDeleter extends AbstractCommandExecutor {
         String[] words = command.split(" ");
 
         String noteName = words[2];
-        NOTE_REPOSITORY.remove(noteName);
+
+        var note = findNote(noteName);
+
+        note.ifPresent(NOTE_REPOSITORY::remove);
 
         return 1;
     }

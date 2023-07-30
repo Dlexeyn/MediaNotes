@@ -1,5 +1,6 @@
 package medianotes.command.executor;
 
+import medianotes.context.UserContext;
 import medianotes.model.Note;
 import medianotes.command.CommandType;
 
@@ -40,7 +41,9 @@ public class NoteCreator extends AbstractCommandExecutor {
         }
         String noteText = noteTextSb.toString();
 
-        Note newNote = new Note(noteName, noteText, folder.get());
+        var authorEmail = UserContext.getUserLogin();
+
+        Note newNote = new Note(noteName, noteText, folder.get(), authorEmail);
         NOTE_REPOSITORY.save(newNote);
 
         System.out.println("Note created");

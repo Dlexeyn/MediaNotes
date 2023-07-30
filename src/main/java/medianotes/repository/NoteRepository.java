@@ -8,5 +8,5 @@ public interface NoteRepository {
 
     Set<Note> getAllNotes();
 
-    void remove(String name);
+    void remove(Note note);
 }

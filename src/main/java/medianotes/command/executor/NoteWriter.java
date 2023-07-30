@@ -1,6 +1,11 @@
 package medianotes.command.executor;
 
 import medianotes.command.CommandType;
+import medianotes.context.UserContext;
+import medianotes.model.Note;
+
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class NoteWriter extends AbstractCommandExecutor {
     @Override
@@ -14,14 +19,30 @@ public class NoteWriter extends AbstractCommandExecutor {
     }
 
     private int viewAllNotes(String command){
-        var notes = NOTE_REPOSITORY.getAllNotes();
+        var isNeedsFiltering = command.contains("-f");
+        var isNeedsSorting = command.contains("-s");
+
+        var notes = NOTE_REPOSITORY.getAllNotes().stream().toList();
+        var userEmail = UserContext.getUserLogin();
+
+        if (isNeedsFiltering){
+            notes = notes.stream()
+                    .filter(note -> note.getAuthorEmail().equals(userEmail))
+                    .toList();
+        }
+
+        if (isNeedsSorting){
+            notes = notes.stream()
+                    .sorted(Comparator.comparing(Note::getCreationDate))
+                    .toList();
+        }
 
         for(var note : notes){
             var path = findFolderPath(note.getName());
             System.out.printf("Название: \"%s\", Текст: \"%s\", Автор: \"%s\". FullPath: %s %n",
                     note.getName(),
                     note.getText(),
-                    note.getAuthor(),
+                    note.getAuthorEmail(),
                     path
             );
         }
