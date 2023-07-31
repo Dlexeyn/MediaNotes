@@ -43,7 +43,8 @@ public class NoteCreator extends AbstractCommandExecutor {
 
         var authorEmail = UserContext.getUserLogin();
 
-        Note newNote = new Note(noteName, noteText, folder.get(), authorEmail);
+        // to do
+        Note newNote = new Note(0, noteName, noteText, folder.get(), authorEmail);
         NOTE_REPOSITORY.save(newNote);
 
         System.out.println("Note created");

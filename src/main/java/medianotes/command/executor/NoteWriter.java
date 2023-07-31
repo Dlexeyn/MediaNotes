@@ -5,7 +5,6 @@ import medianotes.context.UserContext;
 import medianotes.model.Note;
 
 import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class NoteWriter extends AbstractCommandExecutor {
     @Override
@@ -38,12 +37,12 @@ public class NoteWriter extends AbstractCommandExecutor {
         }
 
         for(var note : notes){
-            var path = findFolderPath(note.getName());
+            //var path = findFolderPath(note.getName()); todo
             System.out.printf("Название: \"%s\", Текст: \"%s\", Автор: \"%s\". FullPath: %s %n",
                     note.getName(),
                     note.getText(),
                     note.getAuthorEmail(),
-                    path
+                    "empy path"
             );
         }
 

@@ -17,7 +17,7 @@ public class FolderRepositoryImpl implements FolderRepository{
 
 
     static {
-        loadDataFromFile();
+        //loadDataFromFile();
 
         if(FOLDERS.stream().noneMatch(folder -> folder.name().equals("root"))){
             FOLDERS.add(new Folder("root", null));
